@@ -1,6 +1,6 @@
 {
-  "name": "redux-react-session",
-  "version": "2.5.1",
+  "name": "dlt-react-session",
+  "version": "3.5.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -22,8 +22,7 @@
     "react",
     "session",
     "authentication",
-    "react-router",
-    "localStorage"
+    "react-router"
   ],
   "author": "Bernabe Gonzalez <gobernabe@gmail.com>",
   "contributors": [
@@ -31,9 +30,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bernabe9/redux-react-session/issues"
+    "url": "https://github.com/weivall/redux-react-session/issues"
   },
-  "homepage": "https://github.com/bernabe9/redux-react-session#readme",
+  "homepage": "https://github.com/weivall/redux-react-session#readme",
   "devDependencies": {
     "babel-cli": "6.23.0",
     "babel-core": "6.23.1",
