@@ -17,7 +17,7 @@ describe('API functions', () => {
       beforeEach(() => {
         store = createStore(sessionReducer, initialState);
         user = { email: 'test@test.com', firstName: 'test', lastName: 'test' };
-        const cookies = 'USER-SESSION={%22token%22:%2212345%22}; USER_DATA={%22email%22:%22test@test.com%22%2C%22firstName%22:%22test%22%2C%22lastName%22:%22test%22}';
+        const cookies = 'SID=12345; USER_DATA={%22email%22:%22test@test.com%22%2C%22firstName%22:%22test%22%2C%22lastName%22:%22test%22}';
         const req = { get: jest.fn(() => cookies) };
         sessionService.initServerSession(store, req, { redirectPath: 'redirectionPath' });
       });

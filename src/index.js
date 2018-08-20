@@ -59,7 +59,10 @@ export class sessionService {
       const rc = req.get('cookie');
       rc && rc.split(';').forEach(cookie => {
         const parts = cookie.split('=');
-        if (parts[0].trim() === USER_SESSION || parts[0].trim() === USER_DATA) {
+        if (parts[0].trim() === USER_SESSION) {
+          list[parts[0].trim()] = parts[1];
+	}
+	if (parts[0].trim() === USER_DATA) {
           list[parts[0].trim()] = JSON.parse(decodeURIComponent(parts[1]));
         }
       });
@@ -179,7 +182,7 @@ export class sessionService {
       if (instance.server) {
         instance[USER_SESSION] ? resolve(instance[USER_SESSION]) : reject();
       } else if (instance.driver === 'COOKIES') {
-        const cookies = Cookies.getJSON(USER_SESSION);
+        const cookies = Cookies.get(USER_SESSION);
         cookies ? resolve(cookies) : reject('Session not found');
       } else {
         instance.storage.getItem(USER_SESSION)
@@ -187,7 +190,7 @@ export class sessionService {
           if (currentSession) {
             resolve(currentSession);
           } else {
-            const cookies = Cookies.getJSON(USER_SESSION);
+            const cookies = Cookies.get(USER_SESSION);
             cookies ? resolve(cookies) : reject('Session not found');
           }
         })

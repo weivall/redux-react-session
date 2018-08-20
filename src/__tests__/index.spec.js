@@ -13,7 +13,7 @@ const { __setError, __setSession, __setUser } = localforage;
 describe('API functions', () => {
   let store;
   const user = { email: 'test@test.com', firstName: 'test', lastName: 'test' };
-  const session = { token: '12341234' };
+  const session = '12341234';
   beforeEach((done) => {
     store = createStore(sessionReducer, initialState);
     const options = { driver: 'LOCALFORAGE' };
@@ -251,7 +251,7 @@ describe('API functions', () => {
           __setSession(session);
           return sessionService.loadSession()
           .then((currentSession) => {
-            expect(currentSession).toMatchObject(session);
+            expect(currentSession).toMatch(session);
           });
         });
       });
@@ -279,7 +279,7 @@ describe('API functions', () => {
       test('return the correct value of the session stored', () => {
         return sessionService.loadSession()
         .then((currentSession) => {
-          expect(currentSession).toMatchObject(session);
+          expect(currentSession).toMatch(session);
         });
       });
     });
