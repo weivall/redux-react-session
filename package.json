@@ -1,6 +1,6 @@
 {
   "name": "redux-react-session",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -26,6 +26,9 @@
     "localStorage"
   ],
   "author": "Bernabe Gonzalez <gobernabe@gmail.com>",
+  "contributors": [
+    "Andrii Kalinichenko <weivall@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bernabe9/redux-react-session/issues"
